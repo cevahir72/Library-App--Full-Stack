@@ -14,10 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   categories.init({
-    categoryName: DataTypes.STRING, allowNull: false
+    category: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'categories',
+    timestamps:false
   });
   return categories;
 };

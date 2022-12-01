@@ -10,19 +10,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      
+      models.authors.hasMany(books);
+      books.belongsTo(models.authors); 
+  
       books.belongsTo(models.publishers);
       models.publishers.hasMany(books);
-      books.belongsTo(models.categories);
+  
       models.categories.hasMany(books);
-      books.belongsTo(models.authors);
-      models.authors.hasMany(books);
+      books.belongsTo(models.categories);
+      
     }
   }
   books.init({
-    bookName: DataTypes.STRING, allowNull: false
+    book: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'books',
+    timestamps:false
   });
   return books;
 };

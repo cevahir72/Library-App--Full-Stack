@@ -14,10 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   publishers.init({
-    publisherName: DataTypes.STRING, allowNull: false
+    publisher: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'publishers',
+    timestamps:false
   });
   return publishers;
 };

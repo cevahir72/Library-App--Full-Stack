@@ -9,29 +9,21 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      bookName: {
+      book: {
         type: Sequelize.STRING,
         allowNull:false
       },
-      authorId: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+      authorId:{
+        type: Sequelize.INTEGER,
+        allowNull:false
       },
-      categoryId: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+      publisherId:{
+        type: Sequelize.INTEGER,
+        allowNull:false
       },
-      publisherId: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      categoryId:{
+        type: Sequelize.INTEGER,
+        allowNull:false
       }
     });
   },

@@ -1,11 +1,11 @@
-const books = require('./bookController');
-const publishers = require('./publisherController');
-const authors = require('./authorController');
-const categories = require('./categoryController');
+const authorControlller = require('./authorController');
+const bookController = require('./bookController');
+const categoryController = require('./categoryController');
+const publisherController = require('./publisherController');
 
 module.exports = {
-  books,
-  publishers,
-  authors,
-  categories,
+  authorControlller,
+  bookController,
+  categoryController,
+  publisherController,
 };
