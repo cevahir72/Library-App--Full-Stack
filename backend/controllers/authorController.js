@@ -14,10 +14,10 @@ module.exports ={
     .catch((error) => { res.status(400).send(error); });
   },
   postAuthor (req, res) {
-    const newAuthor = req.params.name
+    const newAuthor = req.body
     return Author
     .create({
-      author:`${newAuthor}`
+      author: newAuthor
     })
     .then((result) => res.status(200).send(result))
     .catch((error) => res.status(400).send(error));

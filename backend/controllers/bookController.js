@@ -13,6 +13,7 @@ module.exports ={
         const {page , size } = req.query
         return Book
         .findAll({
+          attributes:['id',"book"],
           include: [{
             model: Author,
             as: 'author',
@@ -29,6 +30,7 @@ module.exports ={
            limit: size,
            offset: size * page
         })
+
         .then((result) => res.status(200).send(result))
         .catch((error) => res.status(400).send(error));
       },
@@ -65,7 +67,7 @@ module.exports ={
         })
         .then((result) => res.status(200).send(result))
         .catch((error) => res.status(400).send(error));
-      }
+      },
 
 
 

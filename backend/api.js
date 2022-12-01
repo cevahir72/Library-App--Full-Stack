@@ -18,15 +18,15 @@ router.get('/api/book/:search/:order', book.bookSearch);
 
 //Author Routes
 router.get('/api/author', author.authorList);
-router.post('/api/author/:name', author.postAuthor);
+router.post('/api/author', author.postAuthor);
 
 //Category Routes
 router.get('/api/category', category.categoryList);
-router.post('/api/category/:name', category.postCategory);
+router.post('/api/category', category.postCategory);
 
 //Publisher Routes
 router.get('/api/publisher', publisher.publisherList);
-router.post('/api/publisher/:name', publisher.postPublisher);
+router.post('/api/publisher', publisher.postPublisher);
 
 module.exports= router;
 
