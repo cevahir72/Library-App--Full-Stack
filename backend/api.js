@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 
 //Book Routes
-router.get('/api/book', book.bookList);
+router.get('/api/book/:order', book.bookList);
 router.get('/api/book/:search/:order', book.bookSearch);
 
 //Author Routes

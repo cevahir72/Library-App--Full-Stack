@@ -11,8 +11,9 @@ module.exports ={
 
       bookList (req,res){
         const {page , size } = req.query
+        const ORD = req.params.order
         return Book
-        .findAll({
+        .findAndCountAll({
           attributes:['id',"book"],
           include: [{
             model: Author,
@@ -27,6 +28,7 @@ module.exports ={
             as: 'publisher',
             attributes:['publisher']
           }],
+           order: [ ['book', `${ORD}` ]],
            limit: size,
            offset: size * page
         })
@@ -40,7 +42,7 @@ module.exports ={
         const ORD = req.params.order
         const {page , size } = req.query
         return Book
-        .findAll({
+        .findAndCountAll({
           include: [{
             model: Author,
             as: 'author',

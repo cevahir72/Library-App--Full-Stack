@@ -9,6 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
+
 //STYLES  /////////////////////////////////
 
 const Search = styled('div')(({ theme }) => ({
@@ -51,14 +52,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const ColorButton = styled(Button)(() => ({
+  color: "white",
+  backgroundColor: "#f99f64",
+  '&:hover': {
+    backgroundColor: "#f9b080",
+  },
+}));
+
 //////////STYLES ENDS ////////////////////////////////////////////
 
-const Header = () => {
+const Header = ({keyword, setKeyword}) => {
 
-    
+  
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{background:'teal', height:"10vh",display:"flex", alignItems:"center", justifyContent:'center'}}>
+      <AppBar position="static" sx={{background:'#019898', height:"10vh",display:"flex", alignItems:"center", justifyContent:'center'}}>
         <Toolbar sx={{minWidth:'90%'}}>
           
 
@@ -80,16 +90,18 @@ const Header = () => {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              value={keyword}
+              onChange={(e)=>setKeyword(e.target.value)}
             />
           </Search>
-            <Button variant='contained'sx={{background:'#fcfefe', color:"#f76b8a", fontWeight:'600' }} endIcon={<SendIcon/>}>
+            <ColorButton variant='contained' endIcon={<SendIcon/>}>
               Search
-            </Button>
+            </ColorButton>
 
           
           <Box sx={{ display: { xs: 'none', md: 'flex' }, flex:"1" , justifyContent:"end"}}>
             {/* ADD NEW RECORD BUTONU */}
-                <Button variant="contained" sx={{background:'#fcfefe',color:"#f76b8a",fontWeight:'600' }}>ADD NEW RECORD</Button>
+                <ColorButton variant="contained" >ADD NEW RECORD</ColorButton>
           </Box>
 
 
