@@ -195,8 +195,8 @@ const SearchFiltered = ({keyword,setKeyword}) => {
                 </>
               );
             })}
-            <Grid item xs={12}>
-            <Pagination count={Math.floor(bookCount/5)} page={pageFiltered} onChange={handlePageChange} />
+            <Grid item xs={12} sx={{display:"flex", justifyContent:"center",alignItems:"center",height:"10rem"}}>
+            <Pagination count={Math.floor(bookCount/5)} page={pageFiltered} onChange={handlePageChange} size="large"/>
             </Grid>
           </Grid>
         ) : (

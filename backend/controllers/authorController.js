@@ -14,7 +14,8 @@ module.exports ={
     .catch((error) => { res.status(400).send(error); });
   },
   postAuthor (req, res) {
-    const author = req.body
+    const author= req.body
+    console.log(req.body)
     return Author
     .create({
       author: author
