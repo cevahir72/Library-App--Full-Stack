@@ -10,13 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
      static associate(models) {
-      publishers.hasMany(models.books,{
-        foreignKey:"publisherId"
-      });
+      publishers.hasMany(models.books);
     }
   }
   publishers.init({
-    publisher: DataTypes.STRING
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
+    publisher:{
+        type: DataTypes.STRING,
+        allowNull: true
+    } 
   }, {
     sequelize,
     modelName: 'publishers',

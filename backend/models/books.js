@@ -11,25 +11,33 @@ module.exports = (sequelize, DataTypes) => {
      */
      static associate(models) {
       
-      books.belongsTo(models.authors,{
-        foreignKey:"authorId"
-      }); 
+      books.belongsTo(models.authors); 
   
-      books.belongsTo(models.publishers,{
-        foreignKey:"publisherId"
-      });
+      books.belongsTo(models.publishers);
       
-      books.belongsTo(models.categories,{
-        foreignKey:"categoryId"
-      });
+      books.belongsTo(models.categories);
       
     }
   }
   books.init({
-    book: DataTypes.STRING,
-    authorId: DataTypes.INTEGER,
-    categoryId: DataTypes.INTEGER,
-    publisherId: DataTypes.INTEGER
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
+    book:{
+      type:DataTypes.STRING,
+      allowNull: true} ,
+    authorId: {
+      type:DataTypes.INTEGER,
+      allowNull: true} ,
+    categoryId: {
+      type:DataTypes.INTEGER,
+      allowNull: true} ,
+    publisherId: {
+      type:DataTypes.INTEGER,
+      allowNull: true} ,
   }, {
     sequelize,
     modelName: 'books',
