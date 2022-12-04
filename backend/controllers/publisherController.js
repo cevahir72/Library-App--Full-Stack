@@ -11,10 +11,9 @@ module.exports ={
     .catch((error) => res.status(400).send(error));
   },
   postPublisher (req, res) {
-    const newPublisher = req.params.name
     return Publisher
     .create({
-      publisher:`${newPublisher}`
+      publisher: req.body.publisher
     })
     .then((result) => res.status(200).send(result))
     .catch((error) =>  res.status(400).send(error) );

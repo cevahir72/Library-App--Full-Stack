@@ -10,20 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       book: {
-        type: Sequelize.STRING,
-        allowNull:false
+        type: Sequelize.STRING
       },
-      authorId:{
-        type: Sequelize.INTEGER,
-        allowNull:false
+      authorId: {
+        type: Sequelize.INTEGER
       },
-      publisherId:{
-        type: Sequelize.INTEGER,
-        allowNull:false
+      categoryId: {
+        type: Sequelize.INTEGER
       },
-      categoryId:{
-        type: Sequelize.INTEGER,
-        allowNull:false
+      publisherId: {
+        type: Sequelize.INTEGER
       }
     });
   },

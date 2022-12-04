@@ -71,6 +71,17 @@ module.exports ={
         .catch((error) => res.status(400).send(error));
       },
 
+      createBook (req,res){
+        return Book.create({
+          book:req.body.book,
+          authorId:req.body.authorId,
+          publisherId:req.body.publisherId,
+          categoryId:req.body.categoryId
+        })
+        .then((result) => res.status(200).send(result))
+        .catch((error) => res.status(400).send(error));
+      }
+
 
 
       } 

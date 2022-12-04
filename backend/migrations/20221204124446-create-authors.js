@@ -10,8 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       author: {
-        type: Sequelize.STRING,
-        allowNull:false
+        type: Sequelize.STRING
       }
     });
   },
