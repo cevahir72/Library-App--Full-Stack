@@ -8,6 +8,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import { useNavigate } from "react-router-dom";
 
 
 //STYLES  /////////////////////////////////
@@ -64,7 +65,7 @@ const ColorButton = styled(Button)(() => ({
 
 const Header = ({keyword, setKeyword}) => {
 
-  
+  const navigate = useNavigate()
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -101,7 +102,7 @@ const Header = ({keyword, setKeyword}) => {
           
           <Box sx={{ display: { xs: 'none', md: 'flex' }, flex:"1" , justifyContent:"end"}}>
             {/* ADD NEW RECORD BUTONU */}
-                <ColorButton variant="contained" >ADD NEW RECORD</ColorButton>
+                <ColorButton variant="contained" onClick={()=>navigate("/create")}>ADD NEW RECORD</ColorButton>
           </Box>
 
 
